@@ -1,0 +1,6 @@
+framework module ABCCallLib {
+  umbrella header "ABCCallLib.h"
+
+  export *
+  module * { export * }
+}
