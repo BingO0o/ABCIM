@@ -27,7 +27,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'ABCCallLib' do |sp|
-    sp.public_header_files = 'ABCIMSDK/ABCCallLib.framework/Headers/ABCIMKit.h'
+    sp.public_header_files = 'ABCIMSDK/ABCCallLib.framework/Headers/ABCCallLib.h'
     sp.source_files        = 'ABCIMSDK/ABCCallLib.framework/Headers/*.{h}'
     sp.vendored_frameworks = 'ABCIMSDK/ABCCallLib.framework'
     sp.dependency 'AgoraRtcEngine_iOS', '~>2.0.2'
@@ -35,7 +35,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'ABCCallKit' do |sp|
-    sp.public_header_files = 'ABCIMSDK/ABCCallKit.framework/Headers/ABCIMKit.h'
+    sp.public_header_files = 'ABCIMSDK/ABCCallKit.framework/Headers/ABCCallKit.h'
     sp.source_files        = 'ABCIMSDK/ABCCallKit.framework/Headers/*.{h}'
     sp.vendored_frameworks = 'ABCIMSDK/ABCCallKit.framework'
     sp.dependency 'Masonry', '~>1.0.2'
