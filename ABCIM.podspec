@@ -16,7 +16,6 @@ Pod::Spec.new do |s|
     sp.vendored_frameworks = 'ABCIMSDK/ABCIMLib.framework'
     sp.dependency 'AFNetworking', '~> 3.1.0'
     sp.pod_target_xcconfig = { 'ENABLE_BITCODE' => 'NO' }
-    sp.dependency 'ABCIM/ABCIMLib'
   end
 
   s.subspec 'ABCIMKit' do |sp|
@@ -25,7 +24,6 @@ Pod::Spec.new do |s|
     sp.vendored_frameworks = 'ABCIMSDK/ABCIMKit.framework'
     sp.dependency 'SVProgressHUD', '~>2.1.2'
     sp.pod_target_xcconfig = { 'ENABLE_BITCODE' => 'NO' }
-    sp.dependency 'ABCIM/ABCIMKit'
   end
 
 end
