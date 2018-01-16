@@ -13,6 +13,7 @@ Pod::Spec.new do |s|
   s.subspec 'ABCIMLib' do |sp|
     sp.public_header_files = 'ABCIMSDK/ABCIMLib.framework/Headers/ABCIMLib.h'
     sp.source_files        = 'ABCIMSDK/ABCIMLib.framework/Headers/*.{h}'
+    sp.vendored_frameworks = 'ABCIMSDK/ABCIMLib.framework'
     sp.dependency 'AFNetworking', '~> 3.1.0'
     sp.pod_target_xcconfig = { 'ENABLE_BITCODE' => 'NO' }
     sp.dependency 'ABCIM/ABCIMLib'
@@ -21,6 +22,7 @@ Pod::Spec.new do |s|
   s.subspec 'ABCIMKit' do |sp|
     sp.public_header_files = 'ABCIMSDK/ABCIMKit.framework/Headers/ABCIMKit.h'
     sp.source_files        = 'ABCIMSDK/ABCIMKit.framework/Headers/*.{h}'
+    sp.vendored_frameworks = 'ABCIMSDK/ABCIMKit.framework'
     sp.dependency 'SVProgressHUD', '~>2.1.2'
     sp.pod_target_xcconfig = { 'ENABLE_BITCODE' => 'NO' }
     sp.dependency 'ABCIM/ABCIMKit'
