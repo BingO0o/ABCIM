@@ -1,0 +1,6 @@
+framework module ABCIMKit {
+  umbrella header "ABCIMKit.h"
+
+  export *
+  module * { export * }
+}
