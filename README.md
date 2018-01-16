@@ -16,6 +16,14 @@ Version | Date |Changed By |Changes
 ### 添加ABCIMLib,ABCIMKit
 - 添加ABCIMLib，ABCIMKit（使用Embedded Binaries 导入）
 
+### pod导入
+~~~
+pod 'ABCIM/ABCIMLib', '~>0.0.5'
+pod 'ABCIM/ABCIMKit', '~>0.0.5'
+pod 'ABCIM/ABCCallLib', '~>0.0.5'
+pod 'ABCIM/ABCCallKit', '~>0.0.5'
+~~~
+
 ### ABCIMLib和ABCIMKit快速集成
 #### 授权
 sdk中授权规则建议在服务端向笔声server获得token (http://im-api.abcpen.com:5000/auth/grant)
