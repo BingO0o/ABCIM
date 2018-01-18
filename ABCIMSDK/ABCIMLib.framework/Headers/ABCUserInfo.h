@@ -25,5 +25,10 @@
  用户头像的URL
  */
 @property(nonatomic, strong) NSString *avatarURL;
+/*!
+ 拓展信息
+ */
+@property(nonatomic, strong) NSString *extra;
+
 
 @end

@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
     sp.public_header_files = 'ABCIMSDK/ABCIMLib.framework/Headers/ABCIMLib.h'
     sp.source_files        = 'ABCIMSDK/ABCIMLib.framework/Headers/*.{h}'
     sp.vendored_frameworks = 'ABCIMSDK/ABCIMLib.framework'
-    sp.dependency 'AFNetworking', '~> 3.1.0'
+    sp.dependency 'AFNetworking'
     sp.pod_target_xcconfig = { 'ENABLE_BITCODE' => 'NO' }
   end
 
@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
     sp.public_header_files = 'ABCIMSDK/ABCIMKit.framework/Headers/ABCIMKit.h'
     sp.source_files        = 'ABCIMSDK/ABCIMKit.framework/Headers/*.{h}'
     sp.vendored_frameworks = 'ABCIMSDK/ABCIMKit.framework'
-    sp.dependency 'SVProgressHUD', '~>2.1.2'
+    sp.dependency 'SVProgressHUD'
     sp.pod_target_xcconfig = { 'ENABLE_BITCODE' => 'NO' }
   end
 
@@ -30,7 +30,7 @@ Pod::Spec.new do |s|
     sp.public_header_files = 'ABCIMSDK/ABCCallLib.framework/Headers/ABCCallLib.h'
     sp.source_files        = 'ABCIMSDK/ABCCallLib.framework/Headers/*.{h}'
     sp.vendored_frameworks = 'ABCIMSDK/ABCCallLib.framework'
-    sp.dependency 'AgoraRtcEngine_iOS', '~>2.0.2'
+    sp.dependency 'AgoraRtcEngine_iOS'
     sp.pod_target_xcconfig = { 'ENABLE_BITCODE' => 'NO' }
   end
 
@@ -38,8 +38,8 @@ Pod::Spec.new do |s|
     sp.public_header_files = 'ABCIMSDK/ABCCallKit.framework/Headers/ABCCallKit.h'
     sp.source_files        = 'ABCIMSDK/ABCCallKit.framework/Headers/*.{h}'
     sp.vendored_frameworks = 'ABCIMSDK/ABCCallKit.framework'
-    sp.dependency 'Masonry', '~>1.0.2'
-    sp.dependency 'SDWebImage', '~>4.1.2'
+    sp.dependency 'Masonry'
+    sp.dependency 'SDWebImage'
     sp.pod_target_xcconfig = { 'ENABLE_BITCODE' => 'NO' }
   end
 

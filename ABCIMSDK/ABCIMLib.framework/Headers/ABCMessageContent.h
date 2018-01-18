@@ -65,7 +65,24 @@
 
 @end
 
-@interface ABCMessageContent : NSObject<ABCMessageCoding,ABCMessagePersistentCompatible>
+/*!
+ 消息内容摘要的协议
+ 
+ @discussion 用于在会话列表和本地通知中显示消息的摘要。
+ */
+@protocol ABCMessageContentView
+@optional
+
+/*!
+ 返回在会话列表和本地通知中显示的消息内容摘要
+ 
+ @return 会话列表和本地通知中显示的消息内容摘要
+ */
+- (NSString *)conversationDigest;
+ 
+@end
+
+@interface ABCMessageContent : NSObject<ABCMessageCoding,ABCMessagePersistentCompatible,ABCMessageContentView>
 
 /*!
  消息体中用户信息，也可以自定义extra字段

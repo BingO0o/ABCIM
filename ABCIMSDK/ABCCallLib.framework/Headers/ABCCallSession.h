@@ -188,7 +188,9 @@ typedef NS_ENUM(NSInteger, ABCCallDisconnectReason) {
 /**
  * 扩展字段
  */
-@property(nonatomic,assign) NSString *extra;
+@property(nonatomic,strong) NSString *extra;
+
+@property(nonatomic,assign) long long reciveTime;
 
 @property(nonatomic,assign)ABCCallStatus callStatus;
 

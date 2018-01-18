@@ -67,9 +67,14 @@
  [[ABCIMClient sharedABCIMClient] bindDeviceToken:token];
  }
  */
--(void)bindDeviceToken:(NSString *)deviceToken
-                success:(void (^)(void))success
-                failure:(void (^)(void))fail;
+- (void)setDeviceToken:(NSString *)deviceToken;
+
+/*!
+ 设置voipToken，用于远程推送
+ 
+ @param voipToken 使用ABCCallLib的时候需要设置
+ */
+- (void)setVOIPToken:(NSString *)voipToken;
 
 /*!
  解除deviceToken绑定
@@ -219,7 +224,8 @@
 
  @param conversationType    会话类型
  @param targetId            目标会话ID
- @param oldestMessageId     截止的消息ID
+ @param oldestMessageId     截止的消息ID（oldestMessageId == -1 取当前最新）
+ @param count               需要获取消息数量
  @return                    消息实体ABCMessage对象列表
  */
 - (NSArray *)getHistoryMessages:(ABCConversationType)conversationType
