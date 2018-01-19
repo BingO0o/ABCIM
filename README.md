@@ -1,4 +1,8 @@
 # 笔声SDK集成文档
+[![Version](https://img.shields.io/cocoapods/v/ABCIM.svg?style=flat)](http://cocoapods.org/pods/ABCIM)
+[![License](https://img.shields.io/cocoapods/l/ABCIM.svg?style=flat)](http://cocoapods.org/pods/ABCIM)
+[![Platform](https://img.shields.io/cocoapods/p/ABCIM.svg?style=flat)](http://cocoapods.org/pods/ABCIM)
+
 [TOC]
 
 ### REVISION HISTORY
