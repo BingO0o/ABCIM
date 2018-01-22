@@ -56,4 +56,37 @@
 - (void)onReceivedVoipMessage:(ABCMessage *)message;
 @end
 
+/*!
+ 媒体消息下载的监听器
+ */
+@protocol ABCMediaMessageDownloadDelegate <NSObject>
+@optional
+
+/*!
+ 媒体消息下载成功
+ */
+-(void)onMediaMessageDownLoadSuccess:(ABCMessage *)message localPath:(NSString *) localPath;
+
+/*!
+ 媒体消息下载进度
+ */
+-(void)onMediaMessageDownLoadProgress:(ABCMessage *)message progress:(float) progressValue;
+
+/*!
+ 媒体消息下载失败
+ */
+-(void)onMediaMessageDownLoadFail:(ABCMessage *)message errorCode:(ABCErrorCode) errorCode;
+
+@end
+
+/*!
+ 媒体消息下载的监听器
+ */
+@protocol ABCMessageSyncStatusDelegate <NSObject>
+@optional
+
+-(void) onMessageSyncStatus:(ABCSyncStatus) syncStatus;
+
+@end
+
 #endif /* ABCPublicObserver_h */

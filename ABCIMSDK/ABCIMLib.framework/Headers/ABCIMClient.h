@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import "ABCPublicObserver.h"
-#import "ABCUploadMediaStatusListener.h"
 #import "ABCMediaMessage.h"
 #import "ABCUserInfo.h"
 
@@ -105,9 +104,15 @@
  */
 -(void)removeReceiveMessageObserver:(id<ABCIMClientReceiveMessageObserver>)ob;
 
+/*!
+ 设置历史消息同步状态代理
+ */
+-(void)setMessageSyncStatusDelegate:(id<ABCMessageSyncStatusDelegate>) delegate;
+
 -(void)pushVOIPObserver:(id<ABCIMClientVoipMessageObserver>)ob;
 
 -(void)popVOIPObserver:(id<ABCIMClientVoipMessageObserver>)ob;
+
 
 #pragma mark - 程序切换到后台状态监听
 -(void)enterForeground;
@@ -138,10 +143,21 @@
 
  */
 - (ABCMessage *)sendMessage:(ABCConversationType)conversationType
-                 targetId:(NSString *)targetId
+                   targetId:(NSString *)targetId
                     content:(ABCMessageContent *)content
                     success:(void (^)(ABCMessage *message))successBlock
                       error:(void (^)(ABCErrorCode nErrorCode, ABCMessage *message))errorBlock;
+
+/*!
+ 重发消息
+ @param message    发送消息体
+ @param successBlock        发送成功回调
+ @param errorBlock          发送失败回调
+ @return                    发送的消息实体
+ */
+- (ABCMessage *)resendMessage:(ABCMessage *) message
+                      success:(void (^)(ABCMessage *message))successBlock
+                        error:(void (^)(ABCErrorCode nErrorCode, ABCMessage *message))errorBlock;
 
 /*!
  发送媒体消息（图片消息或文件消息）
@@ -161,11 +177,27 @@
                          success:(void (^)(ABCMessage *message))successBlock
                            error:(void (^)(ABCErrorCode nErrorCode, ABCMessage *message))errorBlock;
 
+/*!
+ 重发媒体消息（图片消息或文件消息）
+ 
+ @param message             发送消息体
+ @param progressBlock       消息发送进度更新的回调 [progress:当前的发送进度, 0
+ <= progress <= 100, message:消息实体]
+ @param successBlock        发送成功回调
+ @param errorBlock          发送失败回调
+ */
+- (ABCMessage *)resendMediaMessage:(ABCMessage *) message
+                           success:(void (^)(ABCMessage *message))successBlock
+                          progress:(void (^)(int progress, ABCMessage *message))progressBlock
+                             error:(void (^)(ABCErrorCode nErrorCode, ABCMessage *message))errorBlock;
+
+
 - (ABCMessage *)sendVOIPMessage:(ABCConversationType)conversationType
                      targetId:(NSString *)targetId
                         content:(ABCMessageContent *)content
                         success:(void (^)(ABCMessage *message))successBlock
                           error:(void (^)(ABCErrorCode nErrorCode, ABCMessage *message))errorBlock;
+
 
 /*!
  插入向外发送的消息
@@ -195,6 +227,39 @@
 - (ABCMessage *)insertIncomingMessage:(ABCConversationType)conversationType
                          senderUserId:(NSString *)senderUserId
                              content:(ABCMessageContent *)content;
+
+/*!
+ 获得音频或者视频本地地址
+ 
+ @param message      当前message
+ @param progress     下载进度
+ @param success      如果本地没有则下载并返回进度，如果已经存在直接返回地址
+ @param fail         下载失败
+ */
+- (void)getLocalUrlByMessage:(ABCMediaMessage *)message
+                    progress:(void (^) (float progressValue))progress
+                     success:(void (^) (NSString *localUrl))success
+                     failure:(void (^)(id responseObject))fail __deprecated_msg("已废弃，请勿使用。");;
+
+/*!
+ 获得音频或者视频本地地址
+ 
+ @param message      当前ABCMessage 体（必须是ABCMediaMessage,不然不处理）
+ @param delegate     下载信息状态代理
+ @discussion         设置 ABCMediaMessageDownloadDelegate 默认进入下载队列，也可以自行调用 downloadMediaFile:delegate:方法开始下载
+ */
+- (NSString *)getLocalUrlByMessage:(ABCMessage *)message
+                          delegate:(id<ABCMediaMessageDownloadDelegate>) delegate;
+
+/*!
+ 获得音频或者视频本地地址
+ 
+ @param message      当前ABCMessage 体（必须是ABCMediaMessage,不然不处理）
+ @param delegate     下载信息状态代理
+ @discussion         监听媒体消息下载情况
+ */
+- (void) downloadMediaFile:(ABCMediaMessage *) message
+            delegate:(id<ABCMediaMessageDownloadDelegate>) delegate;
 
 #pragma mark - 会话列表操作
 /*!
@@ -239,11 +304,48 @@
  @param successBlock        发送成功回调
  @param errorBlock          发送失败回调
  @return                    消息实体ABCMessage
- @discussion 具体限制撤回时间点由业务层控制
+ @discussion                具体限制撤回时间点由业务层控制
  */
 -(ABCMessage *) recallMessage:(ABCMessage *) message
                       success:(void (^)(ABCMessage *message))successBlock
                         error:(void (^)(ABCErrorCode nErrorCode, ABCMessage *message))errorBlock;
+
+/*!
+ 删除消息
+ 
+ @param messageIds  消息ID的列表(msgLocalID)
+ @return            是否删除成功
+ 
+ @discussion        数据清理成功后处理下UI上的数据，或者重新获取下会话历史消息
+
+ */
+- (BOOL)deleteMessages:(NSArray *)messageIds;
+
+/*!
+ 删除某个会话中的所有消息
+ 
+ @param conversationType    会话类型
+ @param targetId            目标会话ID
+ @param successBlock        成功的回调
+ @param errorBlock          失败的回调
+ 
+ @discussion                数据清理成功后处理下UI上的数据，或者重新获取下会话历史消息
+  */
+- (void)deleteMessages:(ABCConversationType)conversationType
+              targetId:(NSString *)targetId
+               success:(void (^)(void))successBlock
+                 error:(void (^)(ABCErrorCode status))errorBlock;
+
+/*!
+ 删除某个会话中的所有消息
+ 
+ @param conversationType    会话类型
+ @param targetId            目标会话ID
+ @return                    是否删除成功
+ 
+ @discussion                数据清理成功后处理下UI上的数据，或者重新获取下会话历史消息
+ */
+- (BOOL)clearMessages:(ABCConversationType)conversationType targetId:(NSString *)targetId;
 
 #pragma mark - 未读消息数
 /*!
@@ -257,6 +359,14 @@
 
 
 /*!
+ 获取某个类型的会话中所有的未读消息数
+ 
+ @param conversationTypes   会话类型的数组
+ @return                    该类型的会话中所有的未读消息数
+ */
+- (int)getUnreadCount:(NSArray *)conversationTypes;
+
+/*!
  清除某个会话中的未读消息数
  
  @param conversationType    会话类型
@@ -265,18 +375,6 @@
  */
 - (BOOL)clearMessagesUnreadStatus:(ABCConversationType)conversationType targetId:(NSString *)targetId;
 
-/*!
-获得音频或者视频本地地址
-
-@param message      当前message
-@param progress     下载进度
-@param success      如果本地没有则下载并返回进度，如果已经存在直接返回地址
-@param fail         下载失败
-*/
-- (void)getLocalUrlByMessage:(ABCMediaMessage *)message
-                     progress:(void (^) (float progressValue))progress
-                     success:(void (^) (NSString *localUrl))success
-                     failure:(void (^)(id responseObject))fail;
 #pragma mark - 用户相关
 
 /*!

@@ -28,6 +28,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign) BOOL isInControllerTransition;
 
+
+/*!
+ 收到的消息是否显示发送者的名字
+ 
+ @discussion 默认值为YES。
+ 您可以针对群聊、单聊等不同场景，自己定制是否显示发送方的名字。
+ */
+@property(nonatomic) BOOL displayUserNameInCell;
+
 //
 // Pay more attention to inverted mode with layouts,
 // as you see on collectionView:

@@ -25,7 +25,31 @@ FOUNDATION_EXPORT const unsigned char ABCIMKitVersionString[];
 #import <ABCIMKit/ABCChatInputPanel.h>
 #import <ABCIMKit/ABCChatViewController.h>
 #import <ABCIMKit/ABCConversationViewController.h>
+
+#import <ABCIMKit/ABCCMessage.h>
+#import <ABCIMKit/ABCBaseMessageCell.h>
+#import <ABCIMKit/ABCBaseMessageCellLayout.h>
+#import <ABCIMKit/ABCVideoMessageCell.h>
+#import <ABCIMKit/ABCVideoMessageCellLayout.h>
+#import <ABCIMKit/ABCDateMessageCell.h>
+#import <ABCIMKit/ABCDateMessageCellLayout.h>
+#import <ABCIMKit/ABCImageMessageCell.h>
+#import <ABCIMKit/ABCImageMessageCellLayout.h>
+#import <ABCIMKit/ABCRecallMessageCell.h>
+#import <ABCIMKit/ABCRecallMessageCellLayout.h>
+#import <ABCIMKit/ABCSystemMessageCell.h>
+#import <ABCIMKit/ABCSystemMessageCellLayout.h>
+#import <ABCIMKit/ABCAudioMessageCell.h>
+#import <ABCIMKit/ABCAudioMessageCellLayout.h>
+#import <ABCIMKit/ABCUnknownMessageCell.h>
+#import <ABCIMKit/ABCUnknownMessageCellLayout.h>
+#import <ABCIMKit/ABCGroupNotifyMessageCell.h>
+#import <ABCIMKit/ABCGroupNotifyMessageCellLayout.h>
+
+
 #import <ABCIMKit/ABCWhiteBoardView.h>
 #import <ABCIMKit/ABCVideoUtil.h>
 #import <ABCIMKit/ABCScreenRecordUtil.h>
+#import <ABCIMKit/ABCPluginBoardView.h>
+#import <ABCIMKit/ABCChatInputTextPanel.h>
 

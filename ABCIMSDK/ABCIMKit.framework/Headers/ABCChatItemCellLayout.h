@@ -13,7 +13,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithChatItem:(id<ABCChatItem>)chatItem cellWidth:(CGFloat)width;
 - (void)calculateLayout;
-
 @end
 
 NS_ASSUME_NONNULL_END

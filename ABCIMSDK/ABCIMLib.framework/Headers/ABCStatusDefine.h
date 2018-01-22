@@ -102,9 +102,12 @@ typedef NS_ENUM(NSInteger, ABCErrorCode) {
     /*!
      没有对应用户信息
      */
-    ERRORCODE_NO_USER_CACHE = -6
+    ERRORCODE_NO_USER_CACHE = -6,
 
-
+    /*!
+     文件下载失败
+     */
+    ERRORCODE_FILE_DOWNLOAD_FAIL = -7,
 };
 
 #pragma mark ABCMessagePersistent - 消息的存储策略
@@ -128,5 +131,18 @@ typedef NS_ENUM(NSUInteger, ABCMessagePersistent) {
     MessagePersistent_ISCOUNTED = 2
 };
 
+
+typedef NS_ENUM(NSInteger, ABCSyncStatus) {
+    
+    /*!
+     消息开始同步
+     */
+    SyncStatus_BEGIN = 0,
+    
+    /*!
+     消息结束
+     */
+    SyncStatus_END = 1
+};
 
 #endif /* ABCStatusDefine_h */

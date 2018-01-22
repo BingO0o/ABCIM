@@ -29,7 +29,5 @@ FOUNDATION_EXPORT const unsigned char ABCIMLibVersionString[];
 #import "ABCUnknownMessage.h"
 #import "ABCRecallMessage.h"
 
-#import "ABCUploadMediaStatusListener.h"
-
 #import "ABCConversation.h"
 #import "ABCUserInfo.h"
