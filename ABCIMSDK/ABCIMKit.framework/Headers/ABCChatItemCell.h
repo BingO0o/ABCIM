@@ -8,6 +8,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol ABCChatItemCellDelegate <NSObject>
 
+
+
 @end
 
 @interface ABCChatItemCell : UICollectionViewCell

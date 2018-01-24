@@ -16,8 +16,6 @@
 @property (nonatomic, strong) UIImageView *imgWave;
 @property (nonatomic, strong) UILabel *createTimeLabel;
 
-@property (nonatomic, weak) ABCMessage *message;
-
 @property (nonatomic) UIActivityIndicatorView *downloadIndicatorView;
 @property (nonatomic) UIActivityIndicatorView *uploadIndicatorView;
 

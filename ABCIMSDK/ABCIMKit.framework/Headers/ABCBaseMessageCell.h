@@ -7,15 +7,26 @@
 //
 
 #import <ABCIMKit/ABCChatItemCell.h>
+#import "ABCCMessage.h"
 
 @interface ABCBaseMessageCell : ABCChatItemCell
 
 @property (nonatomic, strong) UIView *bubbleView;
 @property (nonatomic, strong) UIImageView *bubbleImageView;
 @property (nonatomic, strong) UIImageView *avatarImageView;
-@property (nonatomic, strong) UIImageView *sentStatusView;
-@property (nonatomic, strong) UILabel *labName;
+@property (nonatomic, strong) UIButton *sentStatusView;
+@property (nonatomic, strong) UILabel *labNickName;
 
+@property (nonatomic, strong) ABCMessage *message;
 @property (nonatomic, assign, getter=isHighlight) BOOL hightlight;
+
+@end
+
+
+@protocol ABCBaseMessageCellDelegate <ABCChatItemCellDelegate>
+
+@optional
+- (void)bubbleViewClick:(ABCBaseMessageCell *)cell;
+- (void)sentStatusViewClick:(ABCBaseMessageCell *)cell;
 
 @end

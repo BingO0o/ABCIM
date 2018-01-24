@@ -22,7 +22,7 @@
 /*!
  会话中最后一条消息的消息ID
  */
-@property(nonatomic, assign) long lastestMessageId;
+@property(nonatomic, assign) int lastestMessageId;
 
 /*!
  会话中最后一条消息的内容

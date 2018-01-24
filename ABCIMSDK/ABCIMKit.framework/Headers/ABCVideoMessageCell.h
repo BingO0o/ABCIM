@@ -17,8 +17,6 @@
 @property (nonatomic, strong) UIImageView *unreadImageView;
 @property (nonatomic, strong) UIProgressView *progressView;
 
-@property (nonatomic, weak) ABCMessage *message;
-
 @property (nonatomic) UIActivityIndicatorView *downloadIndicatorView;
 @property (nonatomic) UIActivityIndicatorView *uploadIndicatorView;
 

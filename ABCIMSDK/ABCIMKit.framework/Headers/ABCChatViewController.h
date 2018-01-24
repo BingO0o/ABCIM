@@ -68,6 +68,19 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (nullable id<ABCChatItemCellLayout>)createLayoutWithItem:(id<ABCChatItem>)item;
 
+
+/*!
+ 注册自定义消息的Cell
+ 
+ @param cellClass     自定义消息cell的类
+ @param layoutClass   自定义消息layout的类
+ @param messageClass  自定义消息Cell对应的自定义消息的类，该自定义消息需要继承于RCMessageContent
+ 
+ @discussion 如果实现此方法，可以不用实现ABCIMLib 中的 registerMessageType。
+ 
+ */
+- (void)registerClass:(Class)cellClass layoutClass:(Class)layoutClass forMessageClass:(Class)messageClass;
+
 @end
 
 //
