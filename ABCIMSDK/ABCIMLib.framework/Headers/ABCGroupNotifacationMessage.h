@@ -26,11 +26,11 @@
 @property(nonatomic,assign) int timestamp;
 
 //created
-@property(nonatomic,assign) NSString * master;
+@property(nonatomic,strong) NSString * master;
 @property(nonatomic,strong) NSArray *members;
 @property(nonatomic,strong) NSString *groupName;
 
 //GROUP_MEMBER_ADDED,GROUP_MEMBER_LEAVED
-@property(nonatomic,assign) NSString * member;
+@property(nonatomic,strong) NSString * member;
 
 @end

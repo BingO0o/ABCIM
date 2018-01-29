@@ -20,6 +20,7 @@ FOUNDATION_EXPORT const unsigned char ABCIMLibVersionString[];
 #import "ABCPublicObserver.h"
 #import "ABCStatusDefine.h"
 
+#import "ABCSystemMessageContent.h"
 #import "ABCMediaMessage.h"
 #import "ABCTextMessage.h"
 #import "ABCImageMessage.h"

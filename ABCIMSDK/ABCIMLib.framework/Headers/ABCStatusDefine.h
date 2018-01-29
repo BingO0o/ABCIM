@@ -46,6 +46,12 @@ typedef NS_ENUM(NSUInteger, ABCConversationType) {
      群聊
      */
     ConversationType_GROUP = 2,
+    
+    /*!
+     系统消息
+     */
+    ConversationType_SYSTEM = 3
+
 };
 
 #pragma mark ABCSentStatus - 消息的发送状态

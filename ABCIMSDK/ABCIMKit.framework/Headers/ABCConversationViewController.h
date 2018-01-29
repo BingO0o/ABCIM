@@ -9,6 +9,7 @@
 #import "ABCChatViewController.h"
 #import <ABCIMLib/ABCIMLib.h>
 #import <ABCIMKit/ABCPluginBoardView.h>
+#import "ABCBaseMessageCell.h"
 
 @interface ABCConversationViewController : ABCChatViewController
 
@@ -36,6 +37,11 @@
  */
 @property(nonatomic, strong) NSString *targetId;
 
+/*!
+ 加载消息
+ */
+- (void)loadMessages;
+
 #pragma mark - 消息操作
 
 #pragma mark 发送消息
@@ -58,6 +64,12 @@
  @param tag     按钮index
  */
 -(void)pluginBoardView:(ABCPluginBoardView*)pluginBoardView clickedItemWithTag:(NSInteger)tag;
+
+/*!
+ +气泡点击事件
+ @param cell ABCBaseMessageCell
+ */
+- (void)bubbleViewClick:(ABCBaseMessageCell *)cell;
 
 /*!
  发送文本消息

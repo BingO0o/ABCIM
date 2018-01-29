@@ -28,12 +28,12 @@
 /*!
  消息发送者id
  */
-@property(nonatomic) NSString *senderUserId;
+@property(nonatomic, strong) NSString *senderUserId;
 
 /*!
  消息接受者id或者是群组id
  */
-@property(nonatomic) NSString *targetId;
+@property(nonatomic, strong) NSString *targetId;
 
 /*!
  消息的发送或接收时间

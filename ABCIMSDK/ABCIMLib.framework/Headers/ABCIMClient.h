@@ -11,6 +11,7 @@
 #import "ABCPublicObserver.h"
 #import "ABCMediaMessage.h"
 #import "ABCUserInfo.h"
+#import "ABCSystemMessageContent.h"
 
 @interface ABCIMClient : NSObject
 
@@ -129,6 +130,13 @@
  如果您需要自定义消息，必须调用此方法注册该自定义消息的消息类型，否则SDK将无法识别和解析该类型消息。
  */
 - (void)registerMessageType:(Class)messageClass;
+
+/*!
+ 注册自定义的系统消息
+ 
+ @param messageClass    自定义的系统消息的类，该自定义消息需要继承于ABCSystemMessageContent
+  */
+- (void)registerSystemMessage:(Class) messageClass;
 
 #pragma mark 消息发送
 /*!
@@ -299,6 +307,14 @@
                           count:(int) count;
 
 /*!
+ 获取系统消息中所有消息
+ 
+ @param messageType    系统消息类别
+ @return               系统消息实体ABCMessage对象列表
+ */
+- (NSArray *)getHistorySystemMessages:(int) messageType;
+
+/*!
  消息撤回
  @param message             消息实体ABCMessage
  @param successBlock        发送成功回调
@@ -370,7 +386,7 @@
  清除某个会话中的未读消息数
  
  @param conversationType    会话类型
- @param targetId            目标会话ID
+ @param targetId            目标会话ID(系统消息中请使用消息type)
  @return                    是否清除成功
  */
 - (BOOL)clearMessagesUnreadStatus:(ABCConversationType)conversationType targetId:(NSString *)targetId;
