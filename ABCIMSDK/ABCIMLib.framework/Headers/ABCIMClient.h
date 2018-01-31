@@ -341,7 +341,7 @@
  删除某个会话中的所有消息
  
  @param conversationType    会话类型
- @param targetId            目标会话ID
+ @param targetId            目标会话ID(系统消息中请使用消息type)
  @param successBlock        成功的回调
  @param errorBlock          失败的回调
  
