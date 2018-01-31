@@ -247,7 +247,7 @@
 - (void)getLocalUrlByMessage:(ABCMediaMessage *)message
                     progress:(void (^) (float progressValue))progress
                      success:(void (^) (NSString *localUrl))success
-                     failure:(void (^)(id responseObject))fail __deprecated_msg("已废弃，请勿使用。");;
+                     failure:(void (^)(id responseObject))fail __deprecated_msg("已废弃，请勿使用。");
 
 /*!
  获得音频或者视频本地地址
@@ -397,6 +397,20 @@
  从ABCIMLib中获取缓存的用户id
  @param userId            目标用户ID
  */
-- (ABCUserInfo *)getUserInfo:(NSString *)userId;
+- (ABCUserInfo *)getUserInfo:(NSString *)userId __deprecated_msg("已废弃，请勿使用。");
+
+/*!
+ 从ABCIMLib中获取缓存用户信息
+ @param userId              目标用户ID
+ @param asyncDataSource     ABCUserInfoDataSource
+ @param successBlock        获取成功回调
+ @param errorBlock          获取失败回调
+ @discussion                当IMClient中未能获取到缓存文件，请实现ABCUserInfoDataSource中方法从业务服务器中获得用户信息
+ */
+- (void)getUserInfo:(NSString *)userId
+    asyncDataSource:(id<ABCUserInfoDataSource>) asyncDataSource
+            success:(void (^)(ABCUserInfo *userInfo))successBlock
+              error:(void (^)(ABCErrorCode status))errorBlock;
+
 
 @end

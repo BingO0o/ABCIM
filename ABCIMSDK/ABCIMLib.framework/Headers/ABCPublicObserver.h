@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "ABCStatusDefine.h"
 #import "ABCMessage.h"
+#import "ABCUserInfo.h"
 
 #ifndef ABCPublicObserver_h
 #define ABCPublicObserver_h
@@ -86,6 +87,19 @@
 @optional
 
 -(void) onMessageSyncStatus:(ABCSyncStatus) syncStatus;
+
+@end
+
+/*!
+ 用户信息datasource
+ */
+@protocol ABCUserInfoDataSource <NSObject>
+
+@optional
+
+-(void) dataOfABCUserInfoByUserId:(NSString *) userId
+                          success:(void (^)(ABCUserInfo *userInfo)) successBlock
+                            error:(void (^)(ABCErrorCode status))errorBlock;
 
 @end
 

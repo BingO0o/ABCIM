@@ -27,6 +27,7 @@
 
 @optional
 - (void)bubbleViewClick:(ABCBaseMessageCell *)cell;
+- (void)bubbleViewLongPress:(ABCBaseMessageCell *)cell;
 - (void)sentStatusViewClick:(ABCBaseMessageCell *)cell;
 
 @end

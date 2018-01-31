@@ -19,6 +19,8 @@
 
 - (void)attachButtonClick;
 - (void)micButtonClick;
+- (void)faceButtonClick;
+
 
 /**
 *  按下录音按钮开始录音

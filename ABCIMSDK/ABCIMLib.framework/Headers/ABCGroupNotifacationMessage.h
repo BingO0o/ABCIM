@@ -23,7 +23,7 @@
 
 @property(nonatomic,strong) NSString *groupID;
 
-@property(nonatomic,assign) int timestamp;
+@property(nonatomic,assign) long long timestamp;
 
 //created
 @property(nonatomic,strong) NSString * master;
@@ -32,5 +32,6 @@
 
 //GROUP_MEMBER_ADDED,GROUP_MEMBER_LEAVED
 @property(nonatomic,strong) NSString * member;
+@property(nonatomic,strong) NSString * membername;
 
 @end

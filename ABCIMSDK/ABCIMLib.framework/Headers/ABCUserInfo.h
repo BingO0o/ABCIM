@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ABCUserInfo : NSObject
+@interface ABCUserInfo : NSObject<NSCopying>
 
 +(ABCUserInfo *) decodeWithString:(NSString *) jsonString;
 

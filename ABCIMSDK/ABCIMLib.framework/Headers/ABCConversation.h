@@ -25,6 +25,12 @@
 @property(nonatomic, assign) int lastestMessageId;
 
 /*!
+ 会话中最后一条消息发送者id
+ */
+@property(nonatomic, strong) NSString *lastSenderUserId;
+
+
+/*!
  会话中最后一条消息的内容
  */
 @property(nonatomic, strong) ABCMessageContent *lastestMessage;

@@ -72,6 +72,12 @@
 - (void)bubbleViewClick:(ABCBaseMessageCell *)cell;
 
 /*!
++气泡长按事件
+@param cell ABCBaseMessageCell
+*/
+- (void)bubbleViewLongPress:(ABCBaseMessageCell *)cell;
+
+/*!
  发送文本消息
  @param content     消息内容
  */
