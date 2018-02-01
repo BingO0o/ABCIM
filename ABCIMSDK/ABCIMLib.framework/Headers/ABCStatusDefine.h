@@ -30,7 +30,15 @@ typedef NS_ENUM(NSInteger, ABCConnectionStatus) {
     /*!
      连接失败
      */
-    ConnectionStatus_ConnectFail = 3
+    ConnectionStatus_ConnectFail = 3,
+    /*!
+     accessToken 失效，重新登录
+     */
+    ConnectionStatus_AuthFail = 4,
+    /*!
+     其它设备登录，重新登录
+     */
+    ConnectionStatus_LoginOtherDevice = 5
 };
 
 
