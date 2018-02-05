@@ -51,6 +51,11 @@
  */
 - (void)setDelegate:(id<ABCCallReceiveDelegate>)delegate;
 
+/*
+ 设置当前使用voip证书名称
+ */
+- (void)setVoipCerName:(NSString *) cerName;
+
 /*!
  当前的通话会话实体
  */

@@ -16,6 +16,11 @@
 
 + (instancetype)sharedABCCall;
 
+/*
+ 设置当前使用voip证书名称
+ */
+- (void)setVoipCerName:(NSString *) cerName;
+
 /*!
  当前会话类型是否支持视频通话
  

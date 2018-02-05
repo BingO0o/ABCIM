@@ -22,7 +22,6 @@
  */
 @property(nonatomic, strong) ABCUserInfo *currentUserInfo;
 
-
 /*!
  获取笔声ABCIMClient的核心类单例
  
@@ -70,14 +69,14 @@
  [[ABCIMClient sharedABCIMClient] bindDeviceToken:token];
  }
  */
-- (void)setDeviceToken:(NSString *)deviceToken;
+- (void)setDeviceToken:(NSString *)deviceToken cerName:(NSString *) cerName;
 
 /*!
  设置voipToken，用于远程推送
  
  @param voipToken 使用ABCCallLib的时候需要设置
  */
-- (void)setVOIPToken:(NSString *)voipToken;
+- (void)setVOIPToken:(NSString *)voipToken cerName:(NSString *) cerName;
 
 /*!
  解除deviceToken绑定
