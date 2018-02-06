@@ -78,6 +78,12 @@
 - (void)bubbleViewLongPress:(ABCBaseMessageCell *)cell;
 
 /*!
+ +接收消息
+ @param message ABCMessage
+ */
+- (void)onReceivedMessage:(ABCMessage *)message;
+
+/*!
  发送文本消息
  @param content     消息内容
  */

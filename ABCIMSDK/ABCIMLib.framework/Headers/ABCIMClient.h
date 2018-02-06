@@ -140,6 +140,13 @@
   */
 - (void)registerSystemMessage:(Class) messageClass;
 
+/*!
+ 注册自定义的群组消息
+ 
+ @param messageClass    自定义的群组消息的类，该自定义消息需要继承于ABCGroupNotifyContent
+ */
+- (void)registerGroupNotifyMessage:(Class) messageClass;
+
 #pragma mark 消息发送
 /*!
  发送消息

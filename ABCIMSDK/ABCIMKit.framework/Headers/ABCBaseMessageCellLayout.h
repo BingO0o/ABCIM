@@ -45,6 +45,7 @@
 
 @interface ABCBaseMessageCellLayout (ABCStyle)
 
++ (UIImage *)systemMessageBackground;
 + (UIImage *)outgoingAvatarImage;
 + (UIImage *)incomingAvatarImage;
 

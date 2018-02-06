@@ -37,14 +37,10 @@ FOUNDATION_EXPORT const unsigned char ABCIMKitVersionString[];
 #import <ABCIMKit/ABCImageMessageCellLayout.h>
 #import <ABCIMKit/ABCRecallMessageCell.h>
 #import <ABCIMKit/ABCRecallMessageCellLayout.h>
-#import <ABCIMKit/ABCSystemMessageCell.h>
-#import <ABCIMKit/ABCSystemMessageCellLayout.h>
 #import <ABCIMKit/ABCAudioMessageCell.h>
 #import <ABCIMKit/ABCAudioMessageCellLayout.h>
 #import <ABCIMKit/ABCUnknownMessageCell.h>
 #import <ABCIMKit/ABCUnknownMessageCellLayout.h>
-#import <ABCIMKit/ABCGroupNotifyMessageCell.h>
-#import <ABCIMKit/ABCGroupNotifyMessageCellLayout.h>
 
 
 #import <ABCIMKit/ABCWhiteBoardView.h>
