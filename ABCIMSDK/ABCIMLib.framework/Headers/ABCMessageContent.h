@@ -114,4 +114,10 @@
 */
 @property(nonatomic, strong) NSString *extra;
 
+/*!
+ 消息标记
+ */
+@property(nonatomic, strong) NSString *target;
+
+
 @end

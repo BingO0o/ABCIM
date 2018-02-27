@@ -15,7 +15,15 @@
 
 @interface ABCIMClient : NSObject
 
+/*!
+ 当前登录用户id
+ */
 @property(nonatomic, strong) NSString * currUserId;
+
+/*!
+ 当前消息target,设置后会根据这个target来进行存储，查询消息（可不设置）
+ */
+@property(nonatomic, strong) NSString * messageTarget;
 
 /*!
  设置当前登录用户信息，如设置此字段，在消息体传输中都会带上

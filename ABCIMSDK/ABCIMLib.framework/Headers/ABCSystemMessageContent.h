@@ -19,6 +19,8 @@
   */
 - (int)getSystemType;
 
+- (NSString *) getMessageTarget;
+
 @end
 
 @protocol ABCSystemConversationType <NSObject>

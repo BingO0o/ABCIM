@@ -30,5 +30,10 @@
  */
 @property(nonatomic, strong) NSString *extra;
 
+/*!
+ 机构信息
+ */
+@property(nonatomic, strong) NSString *target;
+
 
 @end

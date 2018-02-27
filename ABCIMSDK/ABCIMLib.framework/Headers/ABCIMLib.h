@@ -32,3 +32,6 @@ FOUNDATION_EXPORT const unsigned char ABCIMLibVersionString[];
 
 #import "ABCConversation.h"
 #import "ABCUserInfo.h"
+#import "ABCFileCache.h"
+
+#import "ABCIMDebugHelper.h"
