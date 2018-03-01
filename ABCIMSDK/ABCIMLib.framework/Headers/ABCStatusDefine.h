@@ -154,9 +154,14 @@ typedef NS_ENUM(NSInteger, ABCSyncStatus) {
     SyncStatus_BEGIN = 0,
     
     /*!
-     消息结束
+     消息同步结束
      */
-    SyncStatus_END = 1
+    SyncStatus_END = 1,
+    
+    /*!
+     消息同步失败
+     */
+    SyncStatus_FAIL = 2
 };
 
 #endif /* ABCStatusDefine_h */

@@ -26,6 +26,8 @@
 
 @interface ABCCallManager : NSObject
 
+@property(nonatomic, assign ,readonly) BOOL isCalling;
+
 /*!
  获取笔声ABCCallManager的核心类单例
  

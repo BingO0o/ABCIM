@@ -283,7 +283,7 @@
  @param delegate     下载信息状态代理
  @discussion         监听媒体消息下载情况
  */
-- (void) downloadMediaFile:(ABCMediaMessage *) message
+- (void) downloadMediaFile:(ABCMessage *) message
             delegate:(id<ABCMediaMessageDownloadDelegate>) delegate;
 
 #pragma mark - 会话列表操作

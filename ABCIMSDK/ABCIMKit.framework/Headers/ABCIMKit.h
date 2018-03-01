@@ -43,7 +43,7 @@ FOUNDATION_EXPORT const unsigned char ABCIMKitVersionString[];
 #import <ABCIMKit/ABCUnknownMessageCellLayout.h>
 
 
-#import <ABCIMKit/ABCWhiteBoardView.h>
+#import <ABCIMKit/ABCIMWhiteBoardView.h>
 #import <ABCIMKit/ABCVideoUtil.h>
 #import <ABCIMKit/ABCScreenRecordUtil.h>
 #import <ABCIMKit/ABCPluginBoardView.h>
