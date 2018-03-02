@@ -10,7 +10,22 @@
 #import <ABCCallLib/ABCCallLib.h>
 #import <ABCIMLib/ABCUserInfo.h>
 
+@protocol ABCCallActionDelegate<NSObject>
+
+@optional
+
+-(void) callActionHandUp:(NSString *) channelId;
+-(void) callActionRefuse:(NSString *) channelId;
+-(void) callActionCancelCall:(NSString *) channelId;
+-(void) callActionAcceptCall:(NSString *) channelId;
+-(void) callActionCameraSwitch;
+-(void) callActionMinimize;
+
+@end
+
 @interface ABCCall : NSObject
+
+@property(nonatomic, weak) id<ABCCallActionDelegate> delegate;
 
 @property(nonatomic, strong, readonly) ABCCallSession *currentCallSession;
 
