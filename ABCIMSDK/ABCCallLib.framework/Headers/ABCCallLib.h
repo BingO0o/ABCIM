@@ -18,8 +18,3 @@ FOUNDATION_EXPORT const unsigned char ABCCallLibVersionString[];
 #import <ABCCallLib/ABCCallManager.h>
 #import <ABCCallLib/ABCCallSession.h>
 
-#import <ABCCallLib/ABCCallCancelMessage.h>
-#import <ABCCallLib/ABCCallHandUpMessage.h>
-#import <ABCCallLib/ABCCallRefusedMessage.h>
-#import <ABCCallLib/ABCCallNOResponseMessage.h>
-

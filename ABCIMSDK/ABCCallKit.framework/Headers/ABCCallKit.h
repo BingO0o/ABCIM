@@ -17,3 +17,4 @@ FOUNDATION_EXPORT const unsigned char ABCCallKitVersionString[];
 // In this header, you should import all the public headers of your framework using statements like #import <ABCCallKit/PublicHeader.h>
 
 #import <ABCCallKit/ABCCall.h>
+#import <ABCCallKit/ABCCallKitUtility.h>

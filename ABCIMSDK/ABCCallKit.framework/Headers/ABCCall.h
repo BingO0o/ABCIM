@@ -14,12 +14,9 @@
 
 @optional
 
--(void) callActionHandUp:(NSString *) channelId;
--(void) callActionRefuse:(NSString *) channelId;
--(void) callActionCancelCall:(NSString *) channelId;
--(void) callActionAcceptCall:(NSString *) channelId;
--(void) callActionCameraSwitch;
--(void) callActionMinimize;
+-(void) onCallConnected:(ABCCallSession *) callSession;
+
+-(void) onCallDisconnected:(ABCCallSession *) callSession reason:(ABCCallDisconnectReason) reason;
 
 @end
 

@@ -63,10 +63,10 @@ typedef NS_ENUM(NSInteger, ABCCallDisconnectReason) {
      己方未接听
      */
     ABCCallDisconnectReasonNoResponse = 5,
-//    /*!
-//     己方不支持当前引擎
-//     */
-//    ABCCallDisconnectReasonEngineUnsupported = 6,
+    /*!
+     己方不支持
+     */
+    ABCCallDisconnectReasonEngineUnsupported = 6,
     /*!
      己方网络出错
      */
@@ -99,15 +99,7 @@ typedef NS_ENUM(NSInteger, ABCCallDisconnectReason) {
     /*!
      对方网络错误
      */
-    ABCCallDisconnectReasonRemoteNetworkError = 17,
-    /*!
-     己方其他端已接听
-     */
-    ABCCallDisconnectReasonAcceptByOtherClient = 18,
-    /*!
-     己方被加入黑名单
-     */
-    ABCCallDisconnectReasonAddToBlackList = 19,
+    ABCCallDisconnectReasonRemoteNetworkError = 17
 };
 
 @protocol ABCCallSessionDelegate <NSObject>
