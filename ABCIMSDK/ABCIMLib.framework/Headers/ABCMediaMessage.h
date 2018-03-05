@@ -28,4 +28,12 @@
  */
 @property(nonatomic, assign) long long size;
 
+/*!
+ 是否已读（ABCMediaMessage 中媒体文件是否已读）
+ 
+ @discussion 可在ABCIMClient 中 updateABCMessage 更新
+ */
+@property(nonatomic, assign) BOOL hasMediaRead;
+
+
 @end

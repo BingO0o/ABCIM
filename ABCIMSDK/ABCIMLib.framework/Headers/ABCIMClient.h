@@ -225,6 +225,15 @@
 
 
 /*!
+ 更新本地消息内容数据
+ @param message    ABCMessage
+ 
+ @discussion 可设置媒体消息中文件信息是否已读，或者其它类型消息的ABCMessageContent
+ 勿修改ABCMessage 中其它属性，以免造成数据混乱
+ */
+- (void)updateABCMessage:(ABCMessage *) message;
+
+/*!
  插入向外发送的消息
  
  @param conversationType    会话类型
@@ -275,6 +284,14 @@
  */
 - (NSString *)getLocalUrlByMessage:(ABCMessage *)message
                           delegate:(id<ABCMediaMessageDownloadDelegate>) delegate;
+
+
+/*!
+ 判断是否存在本地地址
+ @param mediaMessage      当前ABCMediaMessage
+ */
+-(BOOL) hasMediaLocalFile:(ABCMediaMessage *) mediaMessage;
+
 
 /*!
  获得音频或者视频本地地址
