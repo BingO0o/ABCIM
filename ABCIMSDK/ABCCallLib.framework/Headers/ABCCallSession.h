@@ -198,6 +198,12 @@ typedef NS_ENUM(NSInteger, ABCCallDisconnectReason) {
 - (void)hangup;
 
 /*!
+ 呼叫超时
+ */
+- (void)callTimeOut;
+
+
+/*!
  邀请用户加入通话
  
  @param userIdList 用户ID列表（暂时只支持单个用户）
