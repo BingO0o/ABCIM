@@ -124,11 +124,6 @@
 
 -(void)popVOIPObserver:(id<ABCIMClientVoipMessageObserver>)ob;
 
-
-#pragma mark - 程序切换到后台状态监听
--(void)enterForeground;
--(void)enterBackground;
-
 #pragma mark - 注册自定义消息类型
 
 /*!
@@ -445,6 +440,5 @@
     asyncDataSource:(id<ABCUserInfoDataSource>) asyncDataSource
             success:(void (^)(ABCUserInfo *userInfo))successBlock
               error:(void (^)(ABCErrorCode status))errorBlock;
-
 
 @end

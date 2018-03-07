@@ -79,8 +79,4 @@
               sessionDelegate:(id<ABCCallSessionDelegate>)delegate
                         extra:(NSString *)extra;
 
--(void)enterForeground;
-
--(void)enterBackground;
-
 @end
