@@ -93,7 +93,7 @@ typedef NS_ENUM(NSInteger, ABCCallDisconnectReason) {
      */
     ABCCallDisconnectReasonRemoteNoResponse = 15,
     /*!
-     对方网络错误
+     对方暂不支持
      */
     ABCCallDisconnectReasonRemoteEngineUnsupported = 16,
     /*!
@@ -114,6 +114,8 @@ typedef NS_ENUM(NSInteger, ABCCallDisconnectReason) {
  通话已结束
  */
 - (void)callDidDisconnect;
+
+- (void)callDidDisconnect:(ABCCallDisconnectReason)reason;
 
 /*!
  对端用户挂断
