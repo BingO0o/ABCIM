@@ -44,7 +44,7 @@
  与笔声IM服务器建立连接
  
  @param token                   从您服务器端获取的token(用户身份令牌)
- @param deviceId                设备唯一id，根获取accessToken是传的deviceId保持一致
+ @param deviceId                设备唯一id，跟获取accessToken是传的deviceId保持一致
  @param userId                  当前获得用户身份令牌的用户ID
  */
 - (void) connectWithToken:(NSString *) token
