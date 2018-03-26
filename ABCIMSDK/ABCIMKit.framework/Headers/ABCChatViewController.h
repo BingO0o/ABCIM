@@ -76,7 +76,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param layoutClass   自定义消息layout的类
  @param messageClass  自定义消息Cell对应的自定义消息的类，该自定义消息需要继承于RCMessageContent
  
- @discussion 如果实现此方法，可以不用实现ABCIMLib 中的 registerMessageType。
+ @discussion 此方法只注册自定义布局，注册消息类型请使用ABCIMLib实现registerMessageType。
  
  */
 - (void)registerClass:(Class)cellClass layoutClass:(Class)layoutClass forMessageClass:(Class)messageClass;
