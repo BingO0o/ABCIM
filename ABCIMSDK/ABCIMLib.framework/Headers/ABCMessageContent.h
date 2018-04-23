@@ -82,7 +82,20 @@
  
 @end
 
-@interface ABCMessageContent : NSObject<ABCMessageCoding,ABCMessagePersistentCompatible,ABCMessageContentView>
+@protocol ABCMessageConversationCompatible<NSObject>
+
+@optional
+
+/*!
+ 是否创建会话列表
+ @discussion 指定某个消息是否要创建会话，如不实现则以缓存策略为准ABCMessagePersistentCompatible（MessagePersistent_ISCOUNTED)
+ MessagePersistent_ISCOUNTED 创建会话。在消息列表中不做isCreateConversion 限制，由第三方程序自己过滤
+ */
+-(BOOL) isCreateConversion;
+
+@end
+
+@interface ABCMessageContent : NSObject<ABCMessageCoding,ABCMessagePersistentCompatible,ABCMessageContentView,ABCMessageConversationCompatible>
 
 /*!
  消息体中用户信息，也可以自定义extra字段
@@ -98,6 +111,11 @@
  消息通知中显示的content
  */
 @property(nonatomic, strong) NSString *pushContent;
+
+/*!
+ 消息发送者的id
+ */
+@property(nonatomic, strong) NSString *senderUserId;
 
 /*!
  消息发送者的name
