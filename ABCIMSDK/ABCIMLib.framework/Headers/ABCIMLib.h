@@ -22,6 +22,8 @@ FOUNDATION_EXPORT const unsigned char ABCIMLibVersionString[];
 
 #import "ABCSystemMessageContent.h"
 #import "ABCGroupNotifyContent.h"
+#import "ABCMessageContent.h"
+#import "ABCMentionedInfo.h"
 #import "ABCMediaMessage.h"
 #import "ABCTextMessage.h"
 #import "ABCImageMessage.h"

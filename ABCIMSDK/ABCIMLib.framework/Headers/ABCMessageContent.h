@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "ABCUserInfo.h"
 #import "ABCStatusDefine.h"
+#import "ABCMentionedInfo.h"
 
 @protocol ABCMessageCoding <NSObject>
 
@@ -101,6 +102,11 @@
  消息体中用户信息，也可以自定义extra字段
  */
 @property(nonatomic, strong) ABCUserInfo *userInfo;
+
+/*!
+ 消息中的@提醒信息
+ */
+@property(nonatomic, strong) ABCMentionedInfo *mentionedInfo;
 
 /*!
  消息通知中显示的titile

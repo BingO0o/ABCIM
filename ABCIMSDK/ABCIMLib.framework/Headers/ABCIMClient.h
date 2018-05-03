@@ -308,8 +308,19 @@
  @discussion 此方法会从本地数据库中，读取会话列表。
  返回的会话列表按照时间从前往后排列，如果有置顶的会话，则置顶的会话会排列在前面。
  */
-- (NSArray *)getConversationList:(NSArray *)conversationTypeList;
+- (NSArray *)getConversationList:(NSArray *)conversationTypeList __deprecated_msg("2.*上已废弃，请勿使用。");
 
+/*!
+ 获取会话列表
+ 
+ @param conversationTypeList 会话类型的数组(需要将ABCConversationType转为NSNumber构建Array)
+ @return                        会话ABCConversation的列表
+ 
+ @discussion 此方法会从本地数据库中，读取会话列表。
+ 返回的会话列表按照时间从前往后排列，如果有置顶的会话，则置顶的会话会排列在前面。
+ 新增会话中@信息
+ */
+- (NSArray *)getConversations:(NSArray *)conversationTypeList;
 
 /*!
  获取会话中所有消息
@@ -385,7 +396,7 @@
  删除某个会话中的所有消息
  
  @param conversationType    会话类型
- @param targetId            目标会话ID
+ @param targetId            目标会话ID(系统消息中请使用消息type)
  @return                    是否删除成功
  
  @discussion                数据清理成功后处理下UI上的数据，或者重新获取下会话历史消息

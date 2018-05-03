@@ -47,4 +47,11 @@
 
 @property(nonatomic, assign) long long timestamp;
 
+/*!
+ 会话中是否存在被@的消息
+ 
+ @discussion 在清除会话未读数（clearMessagesUnreadStatus:targetId:）的时候，会将此状态置成 NO。
+ */
+@property(nonatomic, assign) BOOL hasUnreadMentioned;
+
 @end

@@ -164,4 +164,19 @@ typedef NS_ENUM(NSInteger, ABCSyncStatus) {
     SyncStatus_FAIL = 2
 };
 
+/*!
+ @提醒的类型
+ */
+typedef NS_ENUM(NSUInteger, ABCMentionedType) {
+    /*!
+     @所有人
+     */
+    ABC_Mentioned_All = 1,
+    
+    /*!
+     @部分指定用户
+     */
+    ABC_Mentioned_Users = 2,
+};
+
 #endif /* ABCStatusDefine_h */
