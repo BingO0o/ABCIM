@@ -13,6 +13,7 @@
 
 @interface ABCConversationViewController : ABCChatViewController
 
+@property(nonatomic,strong,getter=getTextView) UITextView *inputTextView;
 /*!
  初始化会话页面
  

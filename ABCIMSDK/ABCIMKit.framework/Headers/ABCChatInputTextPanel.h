@@ -14,6 +14,7 @@
 @protocol ABCChatInputTextPanelDelegate <ABCChatInputPanelDelegate>
 
 @optional
+- (BOOL)growingTextView:(HPGrowingTextView *)growingTextView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text;
 - (void)didInputTextPanelStartInputting:(ABCChatInputTextPanel *)inputTextPanel;
 - (void)inputTextPanel:(ABCChatInputTextPanel *)inputTextPanel requestSendText:(NSString *)text;
 
