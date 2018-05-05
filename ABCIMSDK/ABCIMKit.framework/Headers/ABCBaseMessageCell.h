@@ -30,5 +30,5 @@
 - (void)bubbleViewLongPress:(ABCBaseMessageCell *)cell;
 - (void)sentStatusViewClick:(ABCBaseMessageCell *)cell;
 - (void)avatarViewClick:(ABCBaseMessageCell *)cell;
-
+- (void)avatarViewLongClick:(ABCBaseMessageCell *) cell;
 @end
