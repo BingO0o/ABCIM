@@ -18,4 +18,6 @@
 @property(nonatomic, assign) float height;
 @property(nonatomic, strong) UIImage *image;//data数据不会序列化到json数据中
 
+-(UIImage *) getVideoThumb;
+
 @end

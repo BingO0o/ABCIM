@@ -369,13 +369,15 @@
 /*!
  删除消息
  
+ @param conversationType    会话类型
  @param messageIds  消息ID的列表(msgLocalID)
  @return            是否删除成功
  
  @discussion        数据清理成功后处理下UI上的数据，或者重新获取下会话历史消息
 
  */
-- (BOOL)deleteMessages:(NSArray *)messageIds;
+- (BOOL)deleteMessages:(ABCConversationType)conversationType
+            messageIds:(NSArray *)messageIds;
 
 /*!
  删除某个会话中的所有消息

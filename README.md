@@ -22,10 +22,10 @@ Version | Date |Changed By |Changes
 
 ### pod导入
 ~~~
-pod 'ABCIM/ABCIMLib', '~>0.0.5'
-pod 'ABCIM/ABCIMKit', '~>0.0.5'
-pod 'ABCIM/ABCCallLib', '~>0.0.5'
-pod 'ABCIM/ABCCallKit', '~>0.0.5'
+pod 'ABCIM/ABCIMLib', '~>0.4.2'
+pod 'ABCIM/ABCIMKit', '~>0.4.2'
+pod 'ABCIM/ABCCallLib', '~>0.4.2'
+pod 'ABCIM/ABCCallKit', '~>0.4.2'
 ~~~
 
 ### ABCIMLib和ABCIMKit快速集成
