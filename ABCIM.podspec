@@ -1,12 +1,13 @@
 Pod::Spec.new do |s|
   s.name             = "ABCIM"
-  s.version          = "0.4.2"
+  s.version          = "0.4.3.3"
   s.summary          = "ABCIM."
   s.description      = "ABCIM of bing"
   s.homepage         = "http://www.abcpen.com"
   s.license          = 'MIT'
   s.author           = { "bing" => "bing@abcpen.com" }
-  s.source           = { :git => 'https://github.com/BingO0o/ABCIM.git' }
+  # s.source           = { :git => 'https://github.com/abcpen-inc/bs_im_ios_sdk.git'}
+  s.source           = { :git => 'git@git.abcpen.com:pod_group/ABCIM-Pod.git'}
   s.platform         = :ios, '9.0'
   s.requires_arc     = true
 
