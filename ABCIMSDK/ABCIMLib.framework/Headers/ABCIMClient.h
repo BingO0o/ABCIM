@@ -150,7 +150,7 @@
  */
 - (void)registerGroupNotifyMessage:(Class) messageClass;
 
-#pragma mark 消息发送
+#pragma mark 消息
 /*!
  发送消息
  
@@ -298,7 +298,7 @@
 - (void) downloadMediaFile:(ABCMessage *) message
             delegate:(id<ABCMediaMessageDownloadDelegate>) delegate;
 
-#pragma mark - 会话列表操作
+#pragma mark - 会话操作
 /*!
  获取会话列表
  
@@ -347,12 +347,44 @@
                           count:(int) count;
 
 /*!
+ 获取会话中，从指定消息之前、指定数量，指定消息类型的最新消息实体
+ 
+ @param conversationType    会话类型
+ @param targetId            目标会话ID
+ @param objectNames         消息类型
+ @param oldestMessageId     截止的消息ID（oldestMessageId == -1 取当前最新）
+ @param count               需要获取消息数量
+ @return                    消息实体ABCMessage对象列表
+ */
+- (NSArray *) getHistoryMessages:(ABCConversationType)conversationType
+                        targetId:(NSString *)targetId
+                      objectNames:(NSArray *)objectNames
+                 oldestMessageId:(int) oldestMessageId
+                           count:(int) count;
+
+/*!
+ 获取会话中，从指定消息之前、指定数量，指定用户发送的最新消息实体
+ 
+ @param sender              发送者ID
+ @param targetId            目标会话ID
+ @param oldestMessageId     截止的消息ID（oldestMessageId == -1 取当前最新）
+ @param count               需要获取消息数量
+ @return                    消息实体ABCMessage对象列表
+ */
+- (NSArray *) getGroupMessages:(NSString *) sender
+                      targetId:(NSString *)targetId
+               oldestMessageId:(int) oldestMessageId
+                         count:(int) count;
+
+/*!
  获取系统消息中所有消息
  
  @param messageType    系统消息类别
  @return               系统消息实体ABCMessage对象列表
  */
 - (NSArray *)getHistorySystemMessages:(int) messageType;
+
+
 
 /*!
  消息撤回
@@ -404,6 +436,17 @@
  @discussion                数据清理成功后处理下UI上的数据，或者重新获取下会话历史消息
  */
 - (BOOL)clearMessages:(ABCConversationType)conversationType targetId:(NSString *)targetId;
+
+/*!
+ 设置会话的置顶状态
+ 
+ @param conversationType    会话类型
+ @param targetId            目标会话ID
+ @param isTop               是否置顶
+ @return                    设置是否成功
+ */
+- (BOOL)setConversationToTop:(ABCConversationType)conversationType targetId:(NSString *)targetId isTop:(BOOL)isTop;
+
 
 #pragma mark - 未读消息数
 /*!

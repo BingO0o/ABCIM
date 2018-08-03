@@ -54,4 +54,12 @@
  */
 @property(nonatomic, assign) BOOL hasUnreadMentioned;
 
+/*!
+ 是否置顶，默认值为NO
+ 
+ @discussion
+ 本地配置
+ */
+@property(nonatomic, assign) BOOL isTop;
+
 @end
