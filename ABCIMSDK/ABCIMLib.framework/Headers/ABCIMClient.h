@@ -12,6 +12,7 @@
 #import "ABCMediaMessage.h"
 #import "ABCUserInfo.h"
 #import "ABCSystemMessageContent.h"
+#import "ABCConversation.h"
 
 @interface ABCIMClient : NSObject
 
@@ -321,6 +322,15 @@
  新增会话中@信息
  */
 - (NSArray *)getConversations:(NSArray *)conversationTypeList;
+
+/*!
+ 获取单个会话数据
+ 
+ @param conversationType    会话类型
+ @param targetId            目标会话ID
+ @return                    会话的对象
+ */
+- (ABCConversation *)getConversation:(ABCConversationType)conversationType targetId:(NSString *)targetId;
 
 /*!
  获取会话中所有消息
