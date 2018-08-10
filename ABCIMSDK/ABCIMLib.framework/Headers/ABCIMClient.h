@@ -356,6 +356,23 @@
                 oldestMessageId:(int) oldestMessageId
                           count:(int) count;
 
+
+/*!
+ 获取会话中，从指定消息之前、指定数量的最新消息实体
+ 
+ @param conversationType    会话类型
+ @param targetId            目标会话ID
+ @param oldestMessageId     截止的消息ID（oldestMessageId == -1 取当前最新）
+ @param count               需要获取消息数量
+ @param isInverted          isInverted == true DESC倒序 isInverted == false: ASC正序
+ @return                    消息实体ABCMessage对象列表
+ */
+- (NSArray *)getHistoryMessages:(ABCConversationType)conversationType
+                       targetId:(NSString *)targetId
+                    isInverted:(BOOL) isInverted
+                oldestMessageId:(int) oldestMessageId
+                          count:(int) count;
+
 /*!
  获取会话中，从指定消息之前、指定数量，指定消息类型的最新消息实体
  
@@ -369,6 +386,7 @@
 - (NSArray *) getHistoryMessages:(ABCConversationType)conversationType
                         targetId:(NSString *)targetId
                       objectNames:(NSArray *)objectNames
+                        isForward:(BOOL) isForward
                  oldestMessageId:(int) oldestMessageId
                            count:(int) count;
 

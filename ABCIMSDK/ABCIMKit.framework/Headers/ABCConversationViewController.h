@@ -111,4 +111,23 @@
  */
 -(void) sendVideoMessage:(NSString *)videoUrl imgCover:(UIImage *)image second:(long) second;
 
+/*!
+ 复制某条消息
+ @param message         消息体
+ */
+- (void)copyMessage:(ABCMessage *)message;
+
+/*!
+ 撤回某条消息
+ @param message         消息体
+ */
+- (void)recallMessage:(ABCMessage *)message;
+
+/*!
+ 删除某条消息
+ @param message         消息体
+ */
+- (void)deleteMessage:(ABCMessage *)message;
+
+
 @end
