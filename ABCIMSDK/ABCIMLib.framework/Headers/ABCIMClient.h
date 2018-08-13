@@ -380,6 +380,7 @@
  @param targetId            目标会话ID
  @param objectNames         消息类型
  @param oldestMessageId     截止的消息ID（oldestMessageId == -1 取当前最新）
+ @param isForward           oldestMessageId前或者后的消息
  @param count               需要获取消息数量
  @return                    消息实体ABCMessage对象列表
  */
@@ -393,14 +394,33 @@
 /*!
  获取会话中，从指定消息之前、指定数量，指定用户发送的最新消息实体
  
- @param sender              发送者ID
+ @param senders              发送者ID
  @param targetId            目标会话ID
  @param oldestMessageId     截止的消息ID（oldestMessageId == -1 取当前最新）
  @param count               需要获取消息数量
  @return                    消息实体ABCMessage对象列表
  */
-- (NSArray *) getGroupMessages:(NSString *) sender
+- (NSArray *) getGroupMessages:(NSArray *) senders
                       targetId:(NSString *)targetId
+                    isInverted:(BOOL) isInverted
+               oldestMessageId:(int) oldestMessageId
+                         count:(int) count;
+
+/*!
+ 获取会话中，从指定消息之前、指定消息类型，指定数量，指定用户发送的最新消息实体
+ 
+ @param senders              发送者ID
+ @param targetId            目标会话ID
+ @param objectNames         消息类型
+ @param oldestMessageId     截止的消息ID（oldestMessageId == -1 取当前最新）
+ @param isForward           oldestMessageId前或者后的消息
+ @param count               需要获取消息数量
+ @return                    消息实体ABCMessage对象列表
+ */
+- (NSArray *) getGroupMessages:(NSArray *) senders
+                      targetId:(NSString *)targetId
+                   objectNames:(NSArray *)objectNames
+                     isForward:(BOOL) isForward
                oldestMessageId:(int) oldestMessageId
                          count:(int) count;
 
